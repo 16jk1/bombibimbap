@@ -30,6 +30,7 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+
 </head>
 <body class="animsition">
 
@@ -154,6 +155,8 @@
 		</div>
 	</aside>
 
+
+
 	<!-- Slide1 -->
 	<section class="section-slide">
 		<div class="wrap-slick1">
@@ -182,7 +185,16 @@
 			<div class="wrap-slick1-dots"></div>
 		</div>
 	</section>
-
+	<!-- Alert Info -->
+	<div class="alert info">
+		<span class="closebtn">&times;</span>
+		<br>  
+		<strong>Info!</strong> We will be closing our restaurant between <strong>September 3rd 2021 ~ September 20th 2021 </strong>
+		for family vacations. We hope to see you soon! 
+	</br>
+		<br>Thank you for your considerations,</br>
+		<br>Bom</br>
+	</div>
 	<!-- Welcome -->
 	<section class="section-welcome bg1-pattern p-t-120 p-b-105">
 		<div class="container">
@@ -399,7 +411,27 @@
 		</div>
 	</div>
 
-
+	<script>
+		// Get all elements with class="closebtn"
+		var close = document.getElementsByClassName("closebtn");
+		var i;
+		
+		// Loop through all close buttons
+		for (i = 0; i < close.length; i++) {
+		  // When someone clicks on a close button
+		  close[i].onclick = function(){
+		
+			// Get the parent of <span class="closebtn"> (<div class="alert">)
+			var div = this.parentElement;
+		
+			// Set the opacity of div to 0 (transparent)
+			div.style.opacity = "0";
+		
+			// Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
+			setTimeout(function(){ div.style.display = "none"; }, 600);
+		  }
+		}
+		</script>
 
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
